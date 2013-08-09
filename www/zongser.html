@@ -3,39 +3,23 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Zongset Test UI</title>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	<title>Zongser</title>
 </head>
 
 <body>
 
-<div>
-	<input type="search" ng-model="search">
-</div>
+	<div>
+		<input type="search" ng-model="search">
+	</div>
 
-<div ng-controller="ListSongs">
-	<ul>
-		<li ng-repeat="song in songs">{{song.name}}</li>
-	</ul>
-</div>
+	<div ng-controller="ListSongController">
+		{{hello}}
+	</div>
 
-<script type="text/javascript">
+	<div ng-view></div>
 
-	var ListSongs = function($scope, $http) {
-
-		$http.get('http://itunes.apple.com/lookup?id=400274934').success(function (data) {
-			console.log('Data received : ' + data);
-		});
-
-		$scope.songs = [
-			{name: "onix 1"},
-			{name: "onix 2"},
-			{name: "onix 3"}
-		];
-	};
-
-</script>
-
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
+	<script type="text/javascript" src="js/Zongser.js"></script>
 
 </body>
 </html>
