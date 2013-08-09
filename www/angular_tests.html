@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="myApp">
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 	<script src="controller_tests.js"></script>
@@ -11,5 +11,16 @@
 		<input type="button" ng-click="resetToDefault()" value="clear">
 		<p>{{greeting.text}}, World!</p>
 	</div>
+
+	<div ng-controller="MenuController">
+		<button ng-click='toggleMenu()'>Menu</button>
+		<ul ng-show="menuState.show">
+			<li>Menu 1</li>
+			<li>Menu 2</li>
+			<li>Menu 3</li>
+		</ul>
+	</div>
+
+
 </body>
 </html>
