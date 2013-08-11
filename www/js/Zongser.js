@@ -1,7 +1,7 @@
 var zongerAppModule = angular.module('ZongserApp', []);
 
 /* Controllers */
-zongerAppModule.controller('ListSongController', function($scope, $http) {
+zongerAppModule.controller('ListSongController', function($scope, $rootScope, $http) {
 
 	$scope.searchSongs = function() {
 		var searchCriteria = encodeURIComponent($scope.search);
@@ -12,14 +12,19 @@ zongerAppModule.controller('ListSongController', function($scope, $http) {
 		// Get top 10 Songs from iTunes url
 		$http.jsonp(iTunesUrl).success(function(data, status, headers, config) {
 			$scope.songs = data.results;
+			$rootScope.songs = data.results;
 		});
 
 	};
+});
 
+zongerAppModule.controller('DetailController', function($scope, $rootScope, $routeParams) {
+	var id = $routeParams.id;
+	var song = $rootScope.songs[id];
+	$scope.song = song;
 });
 
 /* Routes */
-
 zongerAppModule.config(function($routeProvider) {
 	$routeProvider.
 		when('/', {

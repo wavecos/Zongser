@@ -1,4 +1,5 @@
 <div class="row">
+  <div class="col-lg-1"></div>
   <div class="col-lg-5">
     <div class="input-group">
     	<input type="search" ng-model="search" class="form-control" placeholder="Artist Name">
@@ -10,19 +11,16 @@
 </div>
 
 <div class="row">
+	<div class="col-lg-1"></div>
 	<div class="col-lg-8">
 		<ul ng-repeat="song in songs" class="media-list">
 			<li class="media">
 			    <a class="pull-left" href="#">
-			      <img class="media-object img-circle" src="{{song.artworkUrl60}}">
+			      <img class="media-object img-circle" ng-src="{{song.artworkUrl60}}">
 			    </a>
 			    <div class="media-body">
 			      <h4 class="media-heading">{{song.trackName}}</h4>
-			      {{song.collectionName}}
-				  <audio controls>
-				    <source src="{{song.previewUrl}}" type="audio/mpeg">
-				    Your browser does not support the audio element.
-				  </audio>
+			      <a href="#/view/{{$index}}">{{song.collectionName}}</a>
 			    </div>
 			</li>
 		</ul>
