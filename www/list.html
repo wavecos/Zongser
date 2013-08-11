@@ -12,8 +12,18 @@
 <div class="row">
 	<div class="col-lg-8">
 		<ul ng-repeat="song in songs" class="media-list">
-			<li>
-				{{song.trackName}} from album: {{song.collectionName}}
+			<li class="media">
+			    <a class="pull-left" href="#">
+			      <img class="media-object img-circle" src="{{song.artworkUrl60}}">
+			    </a>
+			    <div class="media-body">
+			      <h4 class="media-heading">{{song.trackName}}</h4>
+			      {{song.collectionName}}
+				  <audio controls>
+				    <source src="{{song.previewUrl}}" type="audio/mpeg">
+				    Your browser does not support the audio element.
+				  </audio>
+			    </div>
 			</li>
 		</ul>
 	</div>
