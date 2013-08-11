@@ -29,11 +29,11 @@ zongerAppModule.config(function($routeProvider) {
 	$routeProvider.
 		when('/', {
 			controller: 'ListSongController',
-			templateUrl: 'list.html'
+			templateUrl: 'partials/list.html'
 		}).
 		when('/view/:id', {
 			controller: 'DetailController',
-			templateUrl: 'detail.html'
+			templateUrl: 'partials/detail.html'
 		}).
 		otherwise({
 			redirectTo: '/'});
