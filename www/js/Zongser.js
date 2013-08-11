@@ -1,11 +1,5 @@
 var zongerAppModule = angular.module('ZongserApp', []);
 
-/*
-zongerAppModule.config(function($httpProvider){
-    delete $httpProvider.defaults.headers.common['X-Requested-With'];
-});
-*/
-
 /* Controllers */
 zongerAppModule.controller('ListSongController', function($scope, $http) {
 

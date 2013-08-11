@@ -1,10 +1,20 @@
-<div>
-	<input type="search" ng-model="search">
-	<button ng-click='searchSongs()'>Search</button>
+<div class="row">
+  <div class="col-lg-5">
+    <div class="input-group">
+    	<input type="search" ng-model="search" class="form-control" placeholder="Artist Name">
+      <span class="input-group-btn">
+        <button ng-click='searchSongs()' type="button" class="btn btn-default">Search</button>
+      </span>
+    </div>
+  </div>
 </div>
 
-<div>
-	<ul ng-repeat="song in songs">
-		<li>{{song.trackName}} from album: {{song.collectionName}}</li>
-	</ul>
+<div class="row">
+	<div class="col-lg-8">
+		<ul ng-repeat="song in songs" class="media-list">
+			<li>
+				{{song.trackName}} from album: {{song.collectionName}}
+			</li>
+		</ul>
+	</div>
 </div>
